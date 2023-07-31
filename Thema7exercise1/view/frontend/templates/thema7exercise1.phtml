@@ -1,0 +1,29 @@
+<?php
+/** @var \Perspective\Thema7exercise1\Block\Template $block */
+$viewModel = $block->getViewModel();
+$order = $viewModel->getLastRealOrder();
+echo "<b>Идентификатор </b>".$order->getEntityId()."<br><br>";
+
+
+echo("<b>Список продуктов в заказе</b><br>");
+$orders = $order->loadByIncrementId($order->getIncrementId());
+$items = $orders->getItems();
+foreach($items as $item){
+    echo $item->getName()."<br>";}
+echo("<br>");    
+
+echo "<b>Шипинг метод</b> ".$order->getShippingMethod()."<br>"; // shippingm ehtod
+echo "<b>Пеймент метод</b> ".$order -> getPayment()->getData("method")."<br><br>" ;   // payment method
+
+echo "<b>Информация о кастомере</b><br>";
+echo "Имя ".$order->getCustomerFirstname()."<br>";
+echo "Фамилия ".$order->getCustomerLastname()."<br>";
+echo "Email ".$order->getCustomerEmail()."<br>";
+
+
+
+
+
+ 
+
+?>

@@ -1,0 +1,21 @@
+<?php
+/** @var \Perspective\Thema7exercise3\Block\Template $block */
+$viewModel = $block->getData('view_model');
+
+$customerId = $viewModel->getSession();
+
+
+
+$wishlist = $viewModel->getWishlistByCustomerId($customerId);
+
+$viewModel->getWishlistByCustomerId($customerId);
+foreach ($wishlist as $_item) {
+
+    echo "Product ID: " . $_item->getProduct()->getId() . "<br>";
+    echo "Product Name: " . $_item->getProduct()->getName() . "<br>";
+    echo "Product Sku: " . $_item->getProduct()->getSku() . "<br>";
+    echo "Product Price: " . round($_item->getProduct()->getPrice(), 2) . "<br>";
+    echo "<br>";
+}  
+?>
+

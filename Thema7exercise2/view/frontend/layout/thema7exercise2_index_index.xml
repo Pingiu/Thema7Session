@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block name="Perspective_Thema7exercise2" template="Perspective_Thema7exercise2::thema7exercise2.phtml" >
+                <arguments>
+                    <argument name="view_model"
+                            xsi:type="object">
+                            Perspective\Thema7exercise2\ViewModel\Thema7exercise2
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
